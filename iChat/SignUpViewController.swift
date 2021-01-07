@@ -22,14 +22,18 @@ class SignUpViewController: UIViewController {
     let confirmPasswordTextField = OneLineTextField(font: .avenir20())
     
     let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttonDark(), cornerRadius: 4)
-    let loginButton = UIButton()
+    let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Login", for: .normal)
+        button.setTitleColor(.buttonRed(), for: .normal)
+        button.self.titleLabel?.font = .avenir20()
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.setTitleColor(.buttonRed(), for: .normal)
-        loginButton.self.titleLabel?.font = .avenir20()
+        
         view.backgroundColor = .white
         setupConstraints()
     }
@@ -50,9 +54,11 @@ extension SignUpViewController {
                                     axis: .vertical,
                                     spacing: 40)
         
+        loginButton.contentHorizontalAlignment = .leading
         let bottomStackView = UIStackView(arrangedSubviews: [alreadyOnboardLabel, loginButton],
                                           axis: .horizontal,
-                                          spacing: -1)
+                                          spacing: 10)
+        bottomStackView.alignment = .firstBaseline
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
