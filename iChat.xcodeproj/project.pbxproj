@@ -107,8 +107,6 @@
 				064C34F125A4E39300CAED9A /* SignUpViewController.swift */,
 				06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */,
 				06E09F9E25A71BBC00E25886 /* SetupProfileViewController.swift */,
-				064C34F525A4E68800CAED9A /* OneLineTextField.swift */,
-				0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */,
 				06E85A612504C86E00D1A52E /* Extensions */,
 				06E684FF24FFEBBE004FD855 /* Assets.xcassets */,
 				06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */,
@@ -142,6 +140,8 @@
 		06E85A612504C86E00D1A52E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				064C34F525A4E68800CAED9A /* OneLineTextField.swift */,
+				0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */,
 				06976688251218B2004BA591 /* ButtonFormView.swift */,
 				06E85A602504C85D00D1A52E /* UIKit */,
 			);
