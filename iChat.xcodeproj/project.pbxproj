@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */; };
 		061C3EB82500E13A00A922A6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */; };
 		061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */; };
 		061C3EBC2500E6D100A922A6 /* Label + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C3EBB2500E6D100A922A6 /* Label + Extension.swift */; };
@@ -16,6 +17,7 @@
 		06976689251218B2004BA591 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06976688251218B2004BA591 /* ButtonFormView.swift */; };
 		0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697668A2512543A004BA591 /* StackView + Extension.swift */; };
 		06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */; };
+		06E09F9F25A71BBC00E25886 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E09F9E25A71BBC00E25886 /* SetupProfileViewController.swift */; };
 		06E684F724FFEBBB004FD855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E684F624FFEBBB004FD855 /* AppDelegate.swift */; };
 		06E684F924FFEBBB004FD855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E684F824FFEBBB004FD855 /* SceneDelegate.swift */; };
 		06E684FB24FFEBBB004FD855 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E684FA24FFEBBB004FD855 /* AuthViewController.swift */; };
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		061C3EBB2500E6D100A922A6 /* Label + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label + Extension.swift"; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		0697668A2512543A004BA591 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		06E09F9E25A71BBC00E25886 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		06E684F324FFEBBB004FD855 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06E684F624FFEBBB004FD855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06E684F824FFEBBB004FD855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +106,9 @@
 				06E684FA24FFEBBB004FD855 /* AuthViewController.swift */,
 				064C34F125A4E39300CAED9A /* SignUpViewController.swift */,
 				06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */,
+				06E09F9E25A71BBC00E25886 /* SetupProfileViewController.swift */,
 				064C34F525A4E68800CAED9A /* OneLineTextField.swift */,
+				0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */,
 				06E85A612504C86E00D1A52E /* Extensions */,
 				06E684FF24FFEBBE004FD855 /* Assets.xcassets */,
 				06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */,
@@ -246,8 +252,10 @@
 				064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */,
 				061C3EB82500E13A00A922A6 /* UIFont + Extension.swift in Sources */,
 				06E684FB24FFEBBB004FD855 /* AuthViewController.swift in Sources */,
+				06E09F9F25A71BBC00E25886 /* SetupProfileViewController.swift in Sources */,
 				061C3EBC2500E6D100A922A6 /* Label + Extension.swift in Sources */,
 				06976689251218B2004BA591 /* ButtonFormView.swift in Sources */,
+				0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */,
 				06E684F724FFEBBB004FD855 /* AppDelegate.swift in Sources */,
 				061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */,
 				061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */,
