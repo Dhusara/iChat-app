@@ -14,10 +14,29 @@ class PeopleViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        setupSearchBar()
+    }
+    
+    private func setupSearchBar() {
+        navigationController?.navigationBar.barTintColor = .mainWhite()
+        navigationController?.navigationBar.shadowImage = UIImage()
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
     
 }
 
+// MARK: - UISearchBarDelegate
+
+extension PeopleViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+}
 
 // MARK: - SwiftUI
 import SwiftUI
