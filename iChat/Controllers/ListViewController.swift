@@ -69,6 +69,14 @@ extension ListViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension ListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: view.frame.width, height: 64)
+    }
+}
+
 // MARK: - SwiftUI
 import SwiftUI
 
