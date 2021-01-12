@@ -132,6 +132,7 @@ extension ListViewController {
         section.interGroupSpacing = 20
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
+        
         return section
     }
     
@@ -147,6 +148,7 @@ extension ListViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        
         return section
     }
 }
