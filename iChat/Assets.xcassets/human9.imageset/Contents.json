@@ -1,24 +1,21 @@
 {
   "images" : [
     {
-      "filename" : "human9.jpg",
       "idiom" : "universal",
-      "locale" : "SwiftBook",
+      "filename" : "human9.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "locale" : "SwiftBook",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "locale" : "SwiftBook",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }
