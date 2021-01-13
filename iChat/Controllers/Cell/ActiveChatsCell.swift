@@ -24,6 +24,7 @@ class ActiveChatsCell: UICollectionViewCell, SelfConfiguringCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .green
         setupConstraints()
     }
     
@@ -38,9 +39,40 @@ class ActiveChatsCell: UICollectionViewCell, SelfConfiguringCell {
         lastMessage.translatesAutoresizingMaskIntoConstraints = false
         
         friendImageView.backgroundColor = .red
+        
+        addSubview(friendImageView)
+        
+        NSLayoutConstraint.activate([
+            friendImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            friendImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            friendImageView.heightAnchor.constraint(equalToConstant: 78),
+            friendImageView.widthAnchor.constraint(equalToConstant: 78)
+        ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - SwiftUI
+import SwiftUI
+
+struct ActiveChatsProvider: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let tabBarVC = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ActiveChatsProvider.ContainerView>) -> MainTabBarController {
+            return tabBarVC
+        }
+        
+        func updateUIViewController(_ uiViewController: ActiveChatsProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ActiveChatsProvider.ContainerView>) {
+            
+        }
     }
 }
