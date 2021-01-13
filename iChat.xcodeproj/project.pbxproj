@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06036A8A25AF710600105682 /* ActiveChatsCell.swift */; };
+		06036A9725AF7DA900105682 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 06036A9625AF7DA900105682 /* activeChats.json */; };
+		06036A9D25AF7DD700105682 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 06036A9C25AF7DD700105682 /* waitingChats.json */; };
 		0610855125ADFC63006AFD94 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */; };
-		0610855525AE00E3006AFD94 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 0610855425AE00E3006AFD94 /* activeChats.json */; };
-		0610855925AE00FE006AFD94 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 0610855825AE00FE006AFD94 /* waitingChats.json */; };
 		0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */; };
 		061C3EB82500E13A00A922A6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */; };
 		061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */; };
@@ -47,9 +47,9 @@
 
 /* Begin PBXFileReference section */
 		06036A8A25AF710600105682 /* ActiveChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatsCell.swift; sourceTree = "<group>"; };
+		06036A9625AF7DA900105682 /* activeChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		06036A9C25AF7DD700105682 /* waitingChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
-		0610855425AE00E3006AFD94 /* activeChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
-		0610855825AE00FE006AFD94 /* waitingChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
@@ -171,6 +171,8 @@
 		06E85A602504C85D00D1A52E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				06036A9625AF7DA900105682 /* activeChats.json */,
+				06036A9C25AF7DD700105682 /* waitingChats.json */,
 				06E6851824FFF442004FD855 /* UIButton + Extension.swift */,
 				061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */,
 				061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */,
@@ -178,8 +180,6 @@
 				061C3EBD2500E79700A922A6 /* UIImageView + Extension.swift */,
 				0697668A2512543A004BA591 /* StackView + Extension.swift */,
 				062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */,
-				0610855425AE00E3006AFD94 /* activeChats.json */,
-				0610855825AE00FE006AFD94 /* waitingChats.json */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -277,10 +277,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06036A9D25AF7DD700105682 /* waitingChats.json in Resources */,
+				06036A9725AF7DA900105682 /* activeChats.json in Resources */,
 				06E6850324FFEBBE004FD855 /* LaunchScreen.storyboard in Resources */,
 				06E6850024FFEBBE004FD855 /* Assets.xcassets in Resources */,
-				0610855525AE00E3006AFD94 /* activeChats.json in Resources */,
-				0610855925AE00FE006AFD94 /* waitingChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
