@@ -18,14 +18,26 @@ class ActiveChatsCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseId: String = "ActiveChatsCell"
     
     let friendImageView = UIImageView()
-    let friendName = UILabel(text: "User name", font: <#T##UIFont?#>)
+    let friendName = UILabel(text: "User name", font: .laoSangamMN20())
+    let lastMessage = UILabel(text: "How are you?", font: .laoSangamMN18())
+    let gradientView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupConstraints()
     }
     
     func configure(with value: MChat) {
-        <#code#>
+        
+    }
+    
+    private func setupConstraints() {
+        friendImageView.translatesAutoresizingMaskIntoConstraints = false
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        friendName.translatesAutoresizingMaskIntoConstraints = false
+        lastMessage.translatesAutoresizingMaskIntoConstraints = false
+        
+        friendImageView.backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {
