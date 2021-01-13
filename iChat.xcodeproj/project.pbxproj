@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06036A8A25AF710600105682 /* ActiveChatsCell.swift */; };
 		0610855125ADFC63006AFD94 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */; };
 		0610855525AE00E3006AFD94 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 0610855425AE00E3006AFD94 /* activeChats.json */; };
 		0610855925AE00FE006AFD94 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 0610855825AE00FE006AFD94 /* waitingChats.json */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06036A8A25AF710600105682 /* ActiveChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatsCell.swift; sourceTree = "<group>"; };
 		0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		0610855425AE00E3006AFD94 /* activeChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		0610855825AE00FE006AFD94 /* waitingChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06036A8925AF70F700105682 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				06036A8A25AF710600105682 /* ActiveChatsCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		06E0830325AAFFFE0034EDEF /* Sign-In & Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		06E0830825AB003A0034EDEF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				06036A8925AF70F700105682 /* Cell */,
 				06E082FF25AAFE020034EDEF /* ListViewController.swift */,
 				06E0830F25AB00C90034EDEF /* PeopleViewController.swift */,
 				06E0830B25AB00650034EDEF /* MainTabBarController.swift */,
@@ -304,6 +315,7 @@
 				062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */,
 				061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */,
 				06E684F924FFEBBB004FD855 /* SceneDelegate.swift in Sources */,
+				06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */,
 				06E6851924FFF442004FD855 /* UIButton + Extension.swift in Sources */,
 				06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */,
 				0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */,
