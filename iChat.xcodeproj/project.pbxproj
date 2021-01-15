@@ -23,6 +23,8 @@
 		06976689251218B2004BA591 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06976688251218B2004BA591 /* ButtonFormView.swift */; };
 		0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697668A2512543A004BA591 /* StackView + Extension.swift */; };
 		06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */; };
+		06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */; };
+		06C2488225B187F600DD6CBF /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2488125B187F600DD6CBF /* SelfConfiguringCell.swift */; };
 		06E0830025AAFE020034EDEF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E082FF25AAFE020034EDEF /* ListViewController.swift */; };
 		06E0830C25AB00650034EDEF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0830B25AB00650034EDEF /* MainTabBarController.swift */; };
 		06E0831025AB00C90034EDEF /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0830F25AB00C90034EDEF /* PeopleViewController.swift */; };
@@ -63,6 +65,8 @@
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		0697668A2512543A004BA591 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsCell.swift; sourceTree = "<group>"; };
+		06C2488125B187F600DD6CBF /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 		06E082FF25AAFE020034EDEF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		06E0830B25AB00650034EDEF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		06E0830F25AB00C90034EDEF /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +106,17 @@
 			isa = PBXGroup;
 			children = (
 				06036A8A25AF710600105682 /* ActiveChatsCell.swift */,
+				06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		06C2488525B1881400DD6CBF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				06C2488125B187F600DD6CBF /* SelfConfiguringCell.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		06E0830325AAFFFE0034EDEF /* Sign-In & Auth */ = {
@@ -153,6 +166,7 @@
 				06E684F824FFEBBB004FD855 /* SceneDelegate.swift */,
 				06E0830825AB003A0034EDEF /* Controllers */,
 				06E0830325AAFFFE0034EDEF /* Sign-In & Auth */,
+				06C2488525B1881400DD6CBF /* Protocols */,
 				06E85A612504C86E00D1A52E /* Extensions */,
 				06E684FF24FFEBBE004FD855 /* Assets.xcassets */,
 				06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */,
@@ -318,9 +332,11 @@
 				061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */,
 				062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */,
 				061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */,
+				06C2488225B187F600DD6CBF /* SelfConfiguringCell.swift in Sources */,
 				06E684F924FFEBBB004FD855 /* SceneDelegate.swift in Sources */,
 				06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */,
 				06E6851924FFF442004FD855 /* UIButton + Extension.swift in Sources */,
+				06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */,
 				06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */,
 				0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */,
 			);
