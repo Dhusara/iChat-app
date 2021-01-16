@@ -30,6 +30,16 @@ class ListViewController: UIViewController {
     
     enum Section: Int, CaseIterable {
         case  waitingChats, activeChats
+        
+        func description() -> String {
+            switch self {
+            
+            case .waitingChats:
+                return "Waiting Chats"
+            case .activeChats:
+                return "Active Chats"
+            }
+        }
     }
     
     var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
@@ -61,7 +71,7 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
-        collectionView.register(<#T##viewClass: AnyClass?##AnyClass?#>, forSupplementaryViewOfKind: <#T##String#>, withReuseIdentifier: <#T##String#>)
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
         collectionView.register(ActiveChatsCell.self, forCellWithReuseIdentifier: ActiveChatsCell.reuseId)
         collectionView.register(WaitingChatsCell.self, forCellWithReuseIdentifier: WaitingChatsCell.reuseId)
@@ -102,6 +112,16 @@ extension ListViewController {
                 return self.configure(cellType: WaitingChatsCell.self, with: chat, for: indexPath)
             }
         })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Can not create new section header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
+            sectionHeader.configure(text: section.description(),
+                                    font: .laoSangamMN20(),
+                                    textColor: #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1))
+            return sectionHeader
+        }
     }
 }
 
@@ -121,6 +141,10 @@ extension ListViewController {
                 return self.createWaitingChats()
             }
         }
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
         return layout
     }
     
@@ -139,10 +163,13 @@ extension ListViewController {
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
         
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
     private func createActiveChats() -> NSCollectionLayoutSection {
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                               heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -155,7 +182,18 @@ extension ListViewController {
         section.interGroupSpacing = 8
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
         
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
+                                                                        elementKind: UICollectionView.elementKindSectionHeader,
+                                                                        alignment: .top)
+        
+        return sectionHeader
     }
 }
 
@@ -172,7 +210,10 @@ import SwiftUI
 
 struct ListVCProvider: PreviewProvider {
     static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
+        Group {
+            ContainerView().edgesIgnoringSafeArea(.all)
+            ContainerView().edgesIgnoringSafeArea(.all)
+        }
     }
     
     struct ContainerView: UIViewControllerRepresentable {

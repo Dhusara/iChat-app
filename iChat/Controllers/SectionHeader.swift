@@ -24,7 +24,7 @@ class SectionHeader: UICollectionReusableView {
             title.topAnchor.constraint(equalTo: self.topAnchor),
             title.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             title.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            title.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
