@@ -10,11 +10,22 @@ import UIKit
 
 class PeopleViewController: UIViewController {
     
+    let users = Bundle.main.decode([MUser].self, from: "users.json")
+    let collectionView: UICollectionView! = nil
+    
+    enum Section: Int, CaseIterable {
+        case users
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         setupSearchBar()
+        
+        users.forEach { (user) in
+            print(user.userName)
+        }
     }
     
     private func setupSearchBar() {

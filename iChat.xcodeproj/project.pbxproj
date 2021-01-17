@@ -20,6 +20,9 @@
 		062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */; };
 		064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F125A4E39300CAED9A /* SignUpViewController.swift */; };
 		064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F525A4E68800CAED9A /* OneLineTextField.swift */; };
+		0665C96A25B42289001FEAED /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 0665C96925B42289001FEAED /* users.json */; };
+		0665C97025B4271F001FEAED /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C96F25B4271F001FEAED /* MUser.swift */; };
+		0665C97425B4272E001FEAED /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C97325B4272E001FEAED /* MChat.swift */; };
 		06976689251218B2004BA591 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06976688251218B2004BA591 /* ButtonFormView.swift */; };
 		0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697668A2512543A004BA591 /* StackView + Extension.swift */; };
 		06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */; };
@@ -63,6 +66,9 @@
 		062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
 		064C34F125A4E39300CAED9A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		064C34F525A4E68800CAED9A /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
+		0665C96925B42289001FEAED /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		0665C96F25B4271F001FEAED /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		0665C97325B4272E001FEAED /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		0697668A2512543A004BA591 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,15 @@
 				06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0665C97725B42791001FEAED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0665C96F25B4271F001FEAED /* MUser.swift */,
+				0665C97325B4272E001FEAED /* MChat.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		06C2488525B1881400DD6CBF /* Protocols */ = {
@@ -167,6 +182,7 @@
 			children = (
 				06E684F624FFEBBB004FD855 /* AppDelegate.swift */,
 				06E684F824FFEBBB004FD855 /* SceneDelegate.swift */,
+				0665C97725B42791001FEAED /* Models */,
 				06E0830825AB003A0034EDEF /* Controllers */,
 				06E0830325AAFFFE0034EDEF /* Sign-In & Auth */,
 				06C2488525B1881400DD6CBF /* Protocols */,
@@ -190,6 +206,7 @@
 		06E85A602504C85D00D1A52E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				0665C96925B42289001FEAED /* users.json */,
 				06036A9625AF7DA900105682 /* activeChats.json */,
 				06036A9C25AF7DD700105682 /* waitingChats.json */,
 				06E6851824FFF442004FD855 /* UIButton + Extension.swift */,
@@ -297,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0665C96A25B42289001FEAED /* users.json in Resources */,
 				06036A9D25AF7DD700105682 /* waitingChats.json in Resources */,
 				06036A9725AF7DA900105682 /* activeChats.json in Resources */,
 				06E6850324FFEBBE004FD855 /* LaunchScreen.storyboard in Resources */,
@@ -318,12 +336,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0665C97425B4272E001FEAED /* MChat.swift in Sources */,
 				06E0830025AAFE020034EDEF /* ListViewController.swift in Sources */,
 				064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */,
 				06DBE89825B31C4200052FEB /* SectionHeader.swift in Sources */,
 				0624057C25B0A634007592DE /* GradientView.swift in Sources */,
 				06E0830C25AB00650034EDEF /* MainTabBarController.swift in Sources */,
 				064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */,
+				0665C97025B4271F001FEAED /* MUser.swift in Sources */,
 				061C3EB82500E13A00A922A6 /* UIFont + Extension.swift in Sources */,
 				06E0831025AB00C90034EDEF /* PeopleViewController.swift in Sources */,
 				06E684FB24FFEBBB004FD855 /* AuthViewController.swift in Sources */,
