@@ -18,6 +18,7 @@
 		061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061C3EBD2500E79700A922A6 /* UIImageView + Extension.swift */; };
 		0624057C25B0A634007592DE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0624057B25B0A634007592DE /* GradientView.swift */; };
 		062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */; };
+		0648060525B5E76A00B33D17 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648060425B5E76A00B33D17 /* UserCell.swift */; };
 		064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F125A4E39300CAED9A /* SignUpViewController.swift */; };
 		064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F525A4E68800CAED9A /* OneLineTextField.swift */; };
 		0665C96A25B42289001FEAED /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 0665C96925B42289001FEAED /* users.json */; };
@@ -64,6 +65,7 @@
 		061C3EBD2500E79700A922A6 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		0624057B25B0A634007592DE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
+		0648060425B5E76A00B33D17 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		064C34F125A4E39300CAED9A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		064C34F525A4E68800CAED9A /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		0665C96925B42289001FEAED /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				06036A8A25AF710600105682 /* ActiveChatsCell.swift */,
 				06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */,
+				0648060425B5E76A00B33D17 /* UserCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */,
 				062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */,
 				061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */,
+				0648060525B5E76A00B33D17 /* UserCell.swift in Sources */,
 				06C2488225B187F600DD6CBF /* SelfConfiguringCell.swift in Sources */,
 				06E684F924FFEBBB004FD855 /* SceneDelegate.swift in Sources */,
 				06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */,
