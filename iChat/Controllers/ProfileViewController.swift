@@ -34,7 +34,6 @@ class ProfileViewController: UIViewController {
         aboutMeLabel.numberOfLines = 0
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 30
-        myTextField.borderStyle = .roundedRect
     }
     
 }

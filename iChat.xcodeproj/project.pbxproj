@@ -20,6 +20,7 @@
 		0624057C25B0A634007592DE /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0624057B25B0A634007592DE /* GradientView.swift */; };
 		062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */; };
 		06445D7E25B9730D000C4F66 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06445D7D25B9730D000C4F66 /* InsertableTextField.swift */; };
+		06445D8225B97AC4000C4F66 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06445D8125B97AC4000C4F66 /* UIView + Extension.swift */; };
 		0648060525B5E76A00B33D17 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648060425B5E76A00B33D17 /* UserCell.swift */; };
 		064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F125A4E39300CAED9A /* SignUpViewController.swift */; };
 		064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F525A4E68800CAED9A /* OneLineTextField.swift */; };
@@ -70,6 +71,7 @@
 		0624057B25B0A634007592DE /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentedControl + Extension.swift"; sourceTree = "<group>"; };
 		06445D7D25B9730D000C4F66 /* InsertableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
+		06445D8125B97AC4000C4F66 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		0648060425B5E76A00B33D17 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		064C34F125A4E39300CAED9A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		064C34F525A4E68800CAED9A /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */,
 				061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */,
 				061C3EBB2500E6D100A922A6 /* Label + Extension.swift */,
+				06445D8125B97AC4000C4F66 /* UIView + Extension.swift */,
 				061C3EBD2500E79700A922A6 /* UIImageView + Extension.swift */,
 				0697668A2512543A004BA591 /* StackView + Extension.swift */,
 				062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */,
@@ -368,6 +371,7 @@
 				0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */,
 				06E684F724FFEBBB004FD855 /* AppDelegate.swift in Sources */,
 				061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */,
+				06445D8225B97AC4000C4F66 /* UIView + Extension.swift in Sources */,
 				062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */,
 				061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */,
 				0648060525B5E76A00B33D17 /* UserCell.swift in Sources */,
