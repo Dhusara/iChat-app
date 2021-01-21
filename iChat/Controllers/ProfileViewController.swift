@@ -34,6 +34,14 @@ class ProfileViewController: UIViewController {
         aboutMeLabel.numberOfLines = 0
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 30
+        
+        if let button = myTextField.rightView as? UIButton {
+            button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        }
+    }
+    
+    @objc private func sendMessage() {
+        print(#function)
     }
     
 }
