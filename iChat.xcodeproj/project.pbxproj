@@ -30,6 +30,7 @@
 		06976689251218B2004BA591 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06976688251218B2004BA591 /* ButtonFormView.swift */; };
 		0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697668A2512543A004BA591 /* StackView + Extension.swift */; };
 		06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */; };
+		06BE1F0225BC2BF40077DF95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */; };
 		06C026EE25BB502600372FDA /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C026ED25BB502600372FDA /* ChatRequestViewController.swift */; };
 		06C026EF25BB502600372FDA /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C026ED25BB502600372FDA /* ChatRequestViewController.swift */; };
 		06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */; };
@@ -83,6 +84,7 @@
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		0697668A2512543A004BA591 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06C026ED25BB502600372FDA /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsCell.swift; sourceTree = "<group>"; };
 		06C2488125B187F600DD6CBF /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		06C026F225BB592400372FDA /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				06DBE89725B31C4200052FEB /* SectionHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		06C2488525B1881400DD6CBF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,13 +174,13 @@
 		06E0830825AB003A0034EDEF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				06036A8925AF70F700105682 /* Cell */,
 				06E082FF25AAFE020034EDEF /* ListViewController.swift */,
-				06DBE89725B31C4200052FEB /* SectionHeader.swift */,
 				06E0830F25AB00C90034EDEF /* PeopleViewController.swift */,
 				060E640B25B87E2F0045D848 /* ProfileViewController.swift */,
 				06C026ED25BB502600372FDA /* ChatRequestViewController.swift */,
 				06E0830B25AB00650034EDEF /* MainTabBarController.swift */,
+				06036A8925AF70F700105682 /* Cell */,
+				06C026F225BB592400372FDA /* Header */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 				06E684FF24FFEBBE004FD855 /* Assets.xcassets */,
 				06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */,
 				06E6850424FFEBBE004FD855 /* Info.plist */,
+				06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */,
 			);
 			path = iChat;
 			sourceTree = "<group>";
@@ -338,6 +349,7 @@
 				06036A9725AF7DA900105682 /* activeChats.json in Resources */,
 				06E6850324FFEBBE004FD855 /* LaunchScreen.storyboard in Resources */,
 				06E6850024FFEBBE004FD855 /* Assets.xcassets in Resources */,
+				06BE1F0225BC2BF40077DF95 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
