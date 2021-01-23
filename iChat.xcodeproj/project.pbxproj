@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,8 @@
 		0665C97425B4272E001FEAED /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C97325B4272E001FEAED /* MChat.swift */; };
 		06976689251218B2004BA591 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06976688251218B2004BA591 /* ButtonFormView.swift */; };
 		0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697668A2512543A004BA591 /* StackView + Extension.swift */; };
+		06999CDD25BC485C00FB96CE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06999CDC25BC485C00FB96CE /* AuthService.swift */; };
+		06999CDE25BC485C00FB96CE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06999CDC25BC485C00FB96CE /* AuthService.swift */; };
 		06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */; };
 		06BE1F0225BC2BF40077DF95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */; };
 		06C026EE25BB502600372FDA /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C026ED25BB502600372FDA /* ChatRequestViewController.swift */; };
@@ -85,6 +87,7 @@
 		0665C97325B4272E001FEAED /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		0697668A2512543A004BA591 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
+		06999CDC25BC485C00FB96CE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06C026ED25BB502600372FDA /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
@@ -145,13 +148,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		0665C97725B42791001FEAED /* Models */ = {
+		0665C97725B42791001FEAED /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0665C96F25B4271F001FEAED /* MUser.swift */,
 				0665C97325B4272E001FEAED /* MChat.swift */,
 			);
-			path = Models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06999CD925BC481C00FB96CE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06999CDC25BC485C00FB96CE /* AuthService.swift */,
+				0665C97725B42791001FEAED /* Model */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		06C026F225BB592400372FDA /* Header */ = {
@@ -220,7 +232,7 @@
 			children = (
 				06E684F624FFEBBB004FD855 /* AppDelegate.swift */,
 				06E684F824FFEBBB004FD855 /* SceneDelegate.swift */,
-				0665C97725B42791001FEAED /* Models */,
+				06999CD925BC481C00FB96CE /* Services */,
 				06E0830825AB003A0034EDEF /* Controllers */,
 				06E0830325AAFFFE0034EDEF /* Sign-In & Auth */,
 				06C2488525B1881400DD6CBF /* Protocols */,
@@ -292,7 +304,6 @@
 				8892BB95FAA0F17F180E73EE /* Pods-iChatTests.debug.xcconfig */,
 				8C0B12D77D8A06D3C76F3F50 /* Pods-iChatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -498,6 +509,7 @@
 				06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */,
 				06E6851924FFF442004FD855 /* UIButton + Extension.swift in Sources */,
 				06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */,
+				06999CDD25BC485C00FB96CE /* AuthService.swift in Sources */,
 				06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */,
 				0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */,
 			);
@@ -507,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06999CDE25BC485C00FB96CE /* AuthService.swift in Sources */,
 				06C026EF25BB502600372FDA /* ChatRequestViewController.swift in Sources */,
 				06E6851124FFEBD1004FD855 /* iChatTests.swift in Sources */,
 			);
@@ -694,6 +707,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 52U947422P;
 				INFOPLIST_FILE = iChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -715,6 +729,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 52U947422P;
 				INFOPLIST_FILE = iChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

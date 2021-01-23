@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#import "GDTCORClock.h"
-#import "GDTCORConsoleLogger.h"
+#import "GDTCORClock.h"///<.h><GDTCORClock.h><GDTCORClock.h>
+#import "GDTCORConsoleLogger.h"///<.h><GDTCORConsoleLogger.h><GDTCORConsoleLogger.h>
 #import "GDTCORDataFuture.h"
 #import "GDTCOREvent.h"
 #import "GDTCOREventDataObject.h"
