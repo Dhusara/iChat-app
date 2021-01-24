@@ -50,6 +50,8 @@
 		06E6850324FFEBBE004FD855 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */; };
 		06E6851124FFEBD1004FD855 /* iChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E6851024FFEBD1004FD855 /* iChatTests.swift */; };
 		06E6851924FFF442004FD855 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E6851824FFF442004FD855 /* UIButton + Extension.swift */; };
+		06E7CC7025BD69A3007A6F17 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7CC6F25BD69A3007A6F17 /* Validators.swift */; };
+		06E7CC7425BDB7E5007A6F17 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7CC7325BDB7E5007A6F17 /* AuthError.swift */; };
 		CA64186F17CD6A6141312FB2 /* Pods_iChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BAB4FDF92C37F7AB2AF077 /* Pods_iChat.framework */; };
 		FCC7A5AE0865402AFBE767CB /* Pods_iChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90873FA6700E0BE337BC033 /* Pods_iChatTests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +112,8 @@
 		06E6851024FFEBD1004FD855 /* iChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iChatTests.swift; sourceTree = "<group>"; };
 		06E6851224FFEBD1004FD855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06E6851824FFF442004FD855 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		06E7CC6F25BD69A3007A6F17 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		06E7CC7325BDB7E5007A6F17 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		6FB769328419169F5E197FC3 /* Pods-iChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.debug.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.debug.xcconfig"; sourceTree = "<group>"; };
 		77BAB4FDF92C37F7AB2AF077 /* Pods_iChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8892BB95FAA0F17F180E73EE /* Pods-iChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChatTests.debug.xcconfig"; path = "Target Support Files/Pods-iChatTests/Pods-iChatTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 				06E0830325AAFFFE0034EDEF /* Sign-In & Auth */,
 				06C2488525B1881400DD6CBF /* Protocols */,
 				06E85A612504C86E00D1A52E /* Extensions */,
+				06E7CC7725BDBA01007A6F17 /* Helpers */,
 				06E684FF24FFEBBE004FD855 /* Assets.xcassets */,
 				06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */,
 				06E6850424FFEBBE004FD855 /* Info.plist */,
@@ -252,6 +257,15 @@
 				06E6851224FFEBD1004FD855 /* Info.plist */,
 			);
 			path = iChatTests;
+			sourceTree = "<group>";
+		};
+		06E7CC7725BDBA01007A6F17 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				06E7CC6F25BD69A3007A6F17 /* Validators.swift */,
+				06E7CC7325BDB7E5007A6F17 /* AuthError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		06E85A602504C85D00D1A52E /* UIKit */ = {
@@ -281,8 +295,8 @@
 				06976688251218B2004BA591 /* ButtonFormView.swift */,
 				0624057B25B0A634007592DE /* GradientView.swift */,
 				0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */,
-				06E85A602504C85D00D1A52E /* UIKit */,
 				06445D7D25B9730D000C4F66 /* InsertableTextField.swift */,
+				06E85A602504C85D00D1A52E /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -484,8 +498,10 @@
 				06DBE89825B31C4200052FEB /* SectionHeader.swift in Sources */,
 				0624057C25B0A634007592DE /* GradientView.swift in Sources */,
 				06E0830C25AB00650034EDEF /* MainTabBarController.swift in Sources */,
+				06E7CC7425BDB7E5007A6F17 /* AuthError.swift in Sources */,
 				064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */,
 				0665C97025B4271F001FEAED /* MUser.swift in Sources */,
+				06E7CC7025BD69A3007A6F17 /* Validators.swift in Sources */,
 				061C3EB82500E13A00A922A6 /* UIFont + Extension.swift in Sources */,
 				06E0831025AB00C90034EDEF /* PeopleViewController.swift in Sources */,
 				06445D7E25B9730D000C4F66 /* InsertableTextField.swift in Sources */,
@@ -707,7 +723,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 52U947422P;
 				INFOPLIST_FILE = iChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -729,7 +745,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 52U947422P;
 				INFOPLIST_FILE = iChatTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
