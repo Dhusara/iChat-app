@@ -10,8 +10,11 @@ import UIKit
 
 struct MUser: Hashable, Decodable {
     var userName: String
+    var email: String
+    var description: String
+    var sex: String
     var avatarStringURL: String
-    var id: Int
+    var id: String
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

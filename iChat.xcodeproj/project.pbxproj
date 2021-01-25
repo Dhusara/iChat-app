@@ -10,6 +10,8 @@
 		06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06036A8A25AF710600105682 /* ActiveChatsCell.swift */; };
 		06036A9725AF7DA900105682 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 06036A9625AF7DA900105682 /* activeChats.json */; };
 		06036A9D25AF7DD700105682 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 06036A9C25AF7DD700105682 /* waitingChats.json */; };
+		060A7DEF25BF738900550DAD /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A7DEE25BF738900550DAD /* FirestoreService.swift */; };
+		060A7E0D25BF796F00550DAD /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A7E0C25BF796F00550DAD /* UserError.swift */; };
 		060E640C25B87E2F0045D848 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E640B25B87E2F0045D848 /* ProfileViewController.swift */; };
 		0610855125ADFC63006AFD94 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */; };
 		0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */; };
@@ -71,6 +73,8 @@
 		06036A8A25AF710600105682 /* ActiveChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatsCell.swift; sourceTree = "<group>"; };
 		06036A9625AF7DA900105682 /* activeChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		06036A9C25AF7DD700105682 /* waitingChats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
+		060A7DEE25BF738900550DAD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		060A7E0C25BF796F00550DAD /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		060E640B25B87E2F0045D848 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0610855025ADFC63006AFD94 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		0619EDF325A8A2CE00F55A13 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				06999CDC25BC485C00FB96CE /* AuthService.swift */,
+				060A7DEE25BF738900550DAD /* FirestoreService.swift */,
 				0665C97725B42791001FEAED /* Model */,
 			);
 			path = Services;
@@ -267,6 +272,7 @@
 			children = (
 				06E7CC6F25BD69A3007A6F17 /* Validators.swift */,
 				06E7CC7325BDB7E5007A6F17 /* AuthError.swift */,
+				060A7E0C25BF796F00550DAD /* UserError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				06FCC99825BF214600220A36 /* AuthNavigationDelegate.swift in Sources */,
 				06445D7E25B9730D000C4F66 /* InsertableTextField.swift in Sources */,
 				06E684FB24FFEBBB004FD855 /* AuthViewController.swift in Sources */,
+				060A7DEF25BF738900550DAD /* FirestoreService.swift in Sources */,
 				0610855125ADFC63006AFD94 /* Bundle-Decodable.swift in Sources */,
 				060E640C25B87E2F0045D848 /* ProfileViewController.swift in Sources */,
 				06E09F9F25A71BBC00E25886 /* SetupProfileViewController.swift in Sources */,
@@ -517,6 +524,7 @@
 				061C3EBC2500E6D100A922A6 /* Label + Extension.swift in Sources */,
 				06976689251218B2004BA591 /* ButtonFormView.swift in Sources */,
 				0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */,
+				060A7E0D25BF796F00550DAD /* UserError.swift in Sources */,
 				06E684F724FFEBBB004FD855 /* AppDelegate.swift in Sources */,
 				061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */,
 				06445D8225B97AC4000C4F66 /* UIView + Extension.swift in Sources */,
