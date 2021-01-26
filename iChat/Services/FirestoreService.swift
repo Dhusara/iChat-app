@@ -26,14 +26,20 @@ class FirestoreService {
             return
         }
         
-        var Muser = MUser(userName: userName!,
+        let Muser = MUser(userName: userName!,
                           email: email,
+                          avatarStringURL: "Not Exist",
                           description: description!,
                           sex: sex!,
-                          avatarStringURL: "Not Exist",
                           id: id)
         
-        self.usersRef.document(Muser.id).setData(<#T##documentData: [String : Any]##[String : Any]#>, completion: <#T##((Error?) -> Void)?##((Error?) -> Void)?##(Error?) -> Void#>)
+        self.usersRef.document(Muser.id).setData(Muser.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(Muser))
+            }
+        }
         
     }
 }
