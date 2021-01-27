@@ -98,6 +98,8 @@ extension AuthViewController: AuthNavigationDelegate {
     }
 }
 
+// MARK: - GIDSignInDelegate
+
 extension AuthViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         AuthService.shared.googleLogin(user: user, error: error) { (result) in
@@ -108,14 +110,14 @@ extension AuthViewController: GIDSignInDelegate {
                     switch result {
                     
                     case .success(let muser):
-                        self.showAlert(with: "Successful!", and: "You are registered!") {
+                        UIApplication.getTopViewController()?.showAlert(with: "Successful!", and: "You are registered!") {
                             let mainTabBar = MainTabBarController(currentUser: muser)
                             mainTabBar.modalPresentationStyle = .fullScreen
-                            self.present(mainTabBar, animated: true, completion: nil)
+                            UIApplication.getTopViewController()?.present(mainTabBar, animated: true, completion: nil)
                         }
-                    case .failure(let error):
-                        self.showAlert(with: "Successful!", and: "You are registered!") {
-                            self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                    case .failure(let _):
+                        UIApplication.getTopViewController()?.showAlert(with: "Successful!", and: "You are entered!") {
+                            UIApplication.getTopViewController()?.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                         }
                     }
                 }

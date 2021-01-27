@@ -39,6 +39,7 @@
 		06C026EF25BB502600372FDA /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C026ED25BB502600372FDA /* ChatRequestViewController.swift */; };
 		06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */; };
 		06C2488225B187F600DD6CBF /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C2488125B187F600DD6CBF /* SelfConfiguringCell.swift */; };
+		06C25D0725C1CAD300B626BD /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C25D0625C1CAD300B626BD /* UIApplication + Extension.swift */; };
 		06C4C30625B741260071AF82 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4C30525B741260071AF82 /* UIViewController + Extension.swift */; };
 		06DBE89825B31C4200052FEB /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DBE89725B31C4200052FEB /* SectionHeader.swift */; };
 		06E0830025AAFE020034EDEF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E082FF25AAFE020034EDEF /* ListViewController.swift */; };
@@ -100,6 +101,7 @@
 		06C026ED25BB502600372FDA /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		06C2487D25B1868300DD6CBF /* WaitingChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsCell.swift; sourceTree = "<group>"; };
 		06C2488125B187F600DD6CBF /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		06C25D0625C1CAD300B626BD /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		06C4C30525B741260071AF82 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		06DBE89725B31C4200052FEB /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		06E082FF25AAFE020034EDEF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				0697668A2512543A004BA591 /* StackView + Extension.swift */,
 				062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */,
 				06C4C30525B741260071AF82 /* UIViewController + Extension.swift */,
+				06C25D0625C1CAD300B626BD /* UIApplication + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				06E0830025AAFE020034EDEF /* ListViewController.swift in Sources */,
 				064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */,
 				06DBE89825B31C4200052FEB /* SectionHeader.swift in Sources */,
+				06C25D0725C1CAD300B626BD /* UIApplication + Extension.swift in Sources */,
 				0624057C25B0A634007592DE /* GradientView.swift in Sources */,
 				06E0830C25AB00650034EDEF /* MainTabBarController.swift in Sources */,
 				06E7CC7425BDB7E5007A6F17 /* AuthError.swift in Sources */,
