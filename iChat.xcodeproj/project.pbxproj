@@ -342,6 +342,7 @@
 				06E684F024FFEBBB004FD855 /* Frameworks */,
 				06E684F124FFEBBB004FD855 /* Resources */,
 				78A8FE35EEB0E548614A9ACB /* [CP] Embed Pods Frameworks */,
+				1C9B89C41F3B52D1154A73B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,6 +434,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C9B89C41F3B52D1154A73B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iChat/Pods-iChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iChat/Pods-iChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iChat/Pods-iChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		78A8FE35EEB0E548614A9ACB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -698,6 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52U947422P;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = iChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -717,6 +736,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52U947422P;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = iChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

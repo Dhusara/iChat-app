@@ -9,6 +9,7 @@ target 'iChat' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'GoogleSignIn'
 
   target 'iChatTests' do
     inherit! :search_paths
