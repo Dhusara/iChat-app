@@ -43,7 +43,7 @@ class FirestoreService {
         
         let Muser = MUser(userName: userName!,
                           email: email,
-                          avatarStringURL: "Not Exist",
+                          avatarStringURL: "not exist",
                           description: description!,
                           sex: sex!,
                           id: id)

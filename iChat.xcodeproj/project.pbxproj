@@ -26,7 +26,7 @@
 		0648060525B5E76A00B33D17 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648060425B5E76A00B33D17 /* UserCell.swift */; };
 		064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F125A4E39300CAED9A /* SignUpViewController.swift */; };
 		064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F525A4E68800CAED9A /* OneLineTextField.swift */; };
-		0665C96A25B42289001FEAED /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 0665C96925B42289001FEAED /* users.json */; };
+		0664663525C163D7006A3F44 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 0664663425C163D7006A3F44 /* users.json */; };
 		0665C97025B4271F001FEAED /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C96F25B4271F001FEAED /* MUser.swift */; };
 		0665C97425B4272E001FEAED /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C97325B4272E001FEAED /* MChat.swift */; };
 		06976689251218B2004BA591 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06976688251218B2004BA591 /* ButtonFormView.swift */; };
@@ -89,7 +89,7 @@
 		0648060425B5E76A00B33D17 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		064C34F125A4E39300CAED9A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		064C34F525A4E68800CAED9A /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
-		0665C96925B42289001FEAED /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		0664663425C163D7006A3F44 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		0665C96F25B4271F001FEAED /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		0665C97325B4272E001FEAED /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 		06E85A602504C85D00D1A52E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				0665C96925B42289001FEAED /* users.json */,
+				0664663425C163D7006A3F44 /* users.json */,
 				06036A9625AF7DA900105682 /* activeChats.json */,
 				06036A9C25AF7DD700105682 /* waitingChats.json */,
 				06E6851824FFF442004FD855 /* UIButton + Extension.swift */,
@@ -414,7 +414,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0665C96A25B42289001FEAED /* users.json in Resources */,
+				0664663525C163D7006A3F44 /* users.json in Resources */,
 				06036A9D25AF7DD700105682 /* waitingChats.json in Resources */,
 				06036A9725AF7DA900105682 /* activeChats.json in Resources */,
 				06E6850324FFEBBE004FD855 /* LaunchScreen.storyboard in Resources */,

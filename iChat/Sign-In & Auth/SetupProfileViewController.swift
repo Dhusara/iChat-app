@@ -31,6 +31,7 @@ class SetupProfileViewController: UIViewController {
     init(currentUser: User) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -46,7 +47,6 @@ class SetupProfileViewController: UIViewController {
     }
     
     @objc private func goToChatsButtonTapped() {
-        
         FirestoreService.shared.saveProfileWith(
             id: currentUser.uid,
             email: currentUser.email!,
@@ -55,8 +55,7 @@ class SetupProfileViewController: UIViewController {
             description: aboutMeTextField.text,
             sex: sexSegmentedControl.titleForSegment(at: sexSegmentedControl.selectedSegmentIndex)) { (result) in
                 switch result {
-                    
-                case .success(let Muser):
+                case .success(let muser):
                     self.showAlert(with: "Успешно!", and: "Данные сохранены!")
                 case .failure(let error):
                     self.showAlert(with: "Ошибка!", and: error.localizedDescription)
