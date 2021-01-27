@@ -251,6 +251,9 @@
 				06E85A612504C86E00D1A52E /* Extensions */,
 				06E7CC7725BDBA01007A6F17 /* Helpers */,
 				06E684FF24FFEBBE004FD855 /* Assets.xcassets */,
+				0664663425C163D7006A3F44 /* users.json */,
+				06036A9625AF7DA900105682 /* activeChats.json */,
+				06036A9C25AF7DD700105682 /* waitingChats.json */,
 				06E6850124FFEBBE004FD855 /* LaunchScreen.storyboard */,
 				06E6850424FFEBBE004FD855 /* Info.plist */,
 				06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */,
@@ -280,9 +283,6 @@
 		06E85A602504C85D00D1A52E /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				0664663425C163D7006A3F44 /* users.json */,
-				06036A9625AF7DA900105682 /* activeChats.json */,
-				06036A9C25AF7DD700105682 /* waitingChats.json */,
 				06E6851824FFF442004FD855 /* UIButton + Extension.swift */,
 				061C3EB72500E13A00A922A6 /* UIFont + Extension.swift */,
 				061C3EB92500E38D00A922A6 /* UIColor + Extension.swift */,

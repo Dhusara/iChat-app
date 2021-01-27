@@ -17,8 +17,7 @@ class AuthService {
     
     func login(email: String?, password: String?, completion: @escaping (Result<User, Error>) -> Void) {
         
-        guard let email = email,
-              let password = password else {
+        guard let email = email, let password = password else {
             completion(.failure(AuthError.notFilled))
             return
         }
@@ -28,7 +27,6 @@ class AuthService {
                 completion(.failure(error!))
                 return
             }
-            
             completion(.success(result.user))
         }
     }
@@ -55,7 +53,6 @@ class AuthService {
                 completion(.failure(error!))
                 return
             }
-            
             completion(.success(result.user))
         }
     }

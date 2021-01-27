@@ -8,6 +8,7 @@
 
 import Firebase
 import FirebaseFirestore
+import FirebaseAuth
 
 class FirestoreService {
     

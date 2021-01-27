@@ -45,10 +45,10 @@ struct MUser: Hashable, Decodable {
     
     var representation: [String: Any] {
         var rep = ["userName": userName]
-        rep["sex"] = sex
         rep["email"] = email
         rep["avatarStringURL"] = avatarStringURL
         rep["description"] = description
+        rep["sex"] = sex
         rep["uid"] = id
         return rep
     }
@@ -62,11 +62,9 @@ struct MUser: Hashable, Decodable {
     }
     
     func contains(filter: String?) -> Bool {
-        guard let filter = filter else {return true}
-        if filter.isEmpty {return true}
-        let lowerCasedFilter = filter.lowercased()
-        
-        return userName.lowercased().contains(lowerCasedFilter)
+        guard let filter = filter else { return true }
+        if filter.isEmpty { return true }
+        let lowercasedFilter = filter.lowercased()
+        return userName.lowercased().contains(lowercasedFilter)
     }
-    
 }
