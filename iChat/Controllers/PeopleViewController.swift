@@ -12,8 +12,7 @@ import FirebaseFirestore
 
 class PeopleViewController: UIViewController {
     
-//    let users = Bundle.main.decode([MUser].self, from: "users.json")
-    let users = [MUser]()
+    var users = [MUser]()
     private var usersListener: ListenerRegistration?
     
     var collectionView: UICollectionView!
@@ -54,11 +53,19 @@ class PeopleViewController: UIViewController {
         
         setupCollectionView()
         createDataSource()
-        reloadData(with: nil)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(signOut))
         
-//        usersListener = 
+        usersListener = ListenerService.shared.usersObserve(users: users, completion: { (result) in
+            switch result {
+            
+            case .success(let users):
+                self.users = users
+                self.reloadData(with: nil)
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        })
     }
     
     @objc private func signOut() {

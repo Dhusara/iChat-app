@@ -11,6 +11,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'GoogleSignIn'
 pod 'Firebase/Storage'
+pod 'SDWebImage', '~> 5.0'
 
   target 'iChatTests' do
     inherit! :search_paths
