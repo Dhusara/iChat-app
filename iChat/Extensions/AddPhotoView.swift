@@ -11,14 +11,13 @@ import UIKit
 class AddPhotoView: UIView {
     
     var circleImageView: UIImageView = {
-        let imageView = UIImageView()
+       let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "avatar")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.borderWidth = 1
-        
         return imageView
     }()
     
@@ -31,7 +30,6 @@ class AddPhotoView: UIView {
         return button
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -41,7 +39,6 @@ class AddPhotoView: UIView {
     }
     
     private func setupConstraints() {
-        
         NSLayoutConstraint.activate([
             circleImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             circleImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
@@ -57,8 +54,7 @@ class AddPhotoView: UIView {
         ])
         
         self.bottomAnchor.constraint(equalTo: circleImageView.bottomAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: circleImageView.trailingAnchor).isActive = true
-        
+        self.trailingAnchor.constraint(equalTo: plusButton.trailingAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

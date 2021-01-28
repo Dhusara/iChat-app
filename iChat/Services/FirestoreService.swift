@@ -35,27 +35,40 @@ class FirestoreService {
         }
     }
     
-    func saveProfileWith(id: String, email: String, userName: String?, avatarImageString: String?, description: String?, sex: String?, completion: @escaping (Result<MUser, Error>) -> Void) {
+    func saveProfileWith(id: String, email: String, userName: String?, avatarImage: UIImage?, description: String?, sex: String?, completion: @escaping (Result<MUser, Error>) -> Void) {
         
         guard Validators.isFilled(userName: userName, description: description, sex: sex) else {
             completion(.failure(UserError.notFilled))
             return
         }
         
-        let Muser = MUser(userName: userName!,
+        guard avatarImage != #imageLiteral(resourceName: "avatar") else {
+            completion(.failure(UserError.photoNotExist))
+            return
+        }
+        
+        var Muser = MUser(userName: userName!,
                           email: email,
                           avatarStringURL: "not exist",
                           description: description!,
                           sex: sex!,
                           id: id)
         
-        self.usersRef.document(Muser.id).setData(Muser.representation) { (error) in
-            if let error = error {
+        StorageService.shared.uploadImage(photo: avatarImage!) { (result) in
+            switch result {
+            
+            case .success(let url):
+                Muser.avatarStringURL = url.absoluteString
+                self.usersRef.document(Muser.id).setData(Muser.representation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(Muser))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            } else {
-                completion(.success(Muser))
             }
-        }
-        
-    }
+        } // StorageService
+    } // saveProfileWith()
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Serhii Demianenko. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 extension UIButton {
@@ -40,5 +41,4 @@ extension UIButton {
         googleLogo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24).isActive = true
         googleLogo.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
-    
 }

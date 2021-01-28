@@ -26,6 +26,8 @@
 		0648060525B5E76A00B33D17 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0648060425B5E76A00B33D17 /* UserCell.swift */; };
 		064C34F225A4E39300CAED9A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F125A4E39300CAED9A /* SignUpViewController.swift */; };
 		064C34F625A4E68800CAED9A /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C34F525A4E68800CAED9A /* OneLineTextField.swift */; };
+		065D074225C2B5CB000E21F4 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D074125C2B5CB000E21F4 /* StorageService.swift */; };
+		065D074825C2B839000E21F4 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D074725C2B839000E21F4 /* UIImage + Extension.swift */; };
 		0664663525C163D7006A3F44 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 0664663425C163D7006A3F44 /* users.json */; };
 		0665C97025B4271F001FEAED /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C96F25B4271F001FEAED /* MUser.swift */; };
 		0665C97425B4272E001FEAED /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665C97325B4272E001FEAED /* MChat.swift */; };
@@ -90,6 +92,8 @@
 		0648060425B5E76A00B33D17 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		064C34F125A4E39300CAED9A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		064C34F525A4E68800CAED9A /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
+		065D074125C2B5CB000E21F4 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		065D074725C2B839000E21F4 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		0664663425C163D7006A3F44 /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		0665C96F25B4271F001FEAED /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		0665C97325B4272E001FEAED /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			children = (
 				06999CDC25BC485C00FB96CE /* AuthService.swift */,
 				060A7DEE25BF738900550DAD /* FirestoreService.swift */,
+				065D074125C2B5CB000E21F4 /* StorageService.swift */,
 				0665C97725B42791001FEAED /* Model */,
 			);
 			path = Services;
@@ -295,6 +300,7 @@
 				062F288525A9AD9300D0F0CD /* SegmentedControl + Extension.swift */,
 				06C4C30525B741260071AF82 /* UIViewController + Extension.swift */,
 				06C25D0625C1CAD300B626BD /* UIApplication + Extension.swift */,
+				065D074725C2B839000E21F4 /* UIImage + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -550,12 +556,14 @@
 				06E684F724FFEBBB004FD855 /* AppDelegate.swift in Sources */,
 				061C3EBE2500E79700A922A6 /* UIImageView + Extension.swift in Sources */,
 				06445D8225B97AC4000C4F66 /* UIView + Extension.swift in Sources */,
+				065D074225C2B5CB000E21F4 /* StorageService.swift in Sources */,
 				062F288625A9AD9300D0F0CD /* SegmentedControl + Extension.swift in Sources */,
 				061C3EBA2500E38D00A922A6 /* UIColor + Extension.swift in Sources */,
 				0648060525B5E76A00B33D17 /* UserCell.swift in Sources */,
 				06C4C30625B741260071AF82 /* UIViewController + Extension.swift in Sources */,
 				06C2488225B187F600DD6CBF /* SelfConfiguringCell.swift in Sources */,
 				06E684F924FFEBBB004FD855 /* SceneDelegate.swift in Sources */,
+				065D074825C2B839000E21F4 /* UIImage + Extension.swift in Sources */,
 				06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */,
 				06E6851924FFF442004FD855 /* UIButton + Extension.swift in Sources */,
 				06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */,
