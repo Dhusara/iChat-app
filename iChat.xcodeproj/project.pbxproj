@@ -48,6 +48,7 @@
 		06E0830C25AB00650034EDEF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0830B25AB00650034EDEF /* MainTabBarController.swift */; };
 		06E0831025AB00C90034EDEF /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0830F25AB00C90034EDEF /* PeopleViewController.swift */; };
 		06E09F9F25A71BBC00E25886 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E09F9E25A71BBC00E25886 /* SetupProfileViewController.swift */; };
+		06E20C9E25C304D30034A32E /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E20C9D25C304D30034A32E /* ListenerService.swift */; };
 		06E684F724FFEBBB004FD855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E684F624FFEBBB004FD855 /* AppDelegate.swift */; };
 		06E684F924FFEBBB004FD855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E684F824FFEBBB004FD855 /* SceneDelegate.swift */; };
 		06E684FB24FFEBBB004FD855 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E684FA24FFEBBB004FD855 /* AuthViewController.swift */; };
@@ -112,6 +113,7 @@
 		06E0830B25AB00650034EDEF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		06E0830F25AB00C90034EDEF /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		06E09F9E25A71BBC00E25886 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
+		06E20C9D25C304D30034A32E /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		06E684F324FFEBBB004FD855 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06E684F624FFEBBB004FD855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06E684F824FFEBBB004FD855 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				06999CDC25BC485C00FB96CE /* AuthService.swift */,
 				060A7DEE25BF738900550DAD /* FirestoreService.swift */,
 				065D074125C2B5CB000E21F4 /* StorageService.swift */,
+				06E20C9D25C304D30034A32E /* ListenerService.swift */,
 				0665C97725B42791001FEAED /* Model */,
 			);
 			path = Services;
@@ -549,6 +552,7 @@
 				060E640C25B87E2F0045D848 /* ProfileViewController.swift in Sources */,
 				06E09F9F25A71BBC00E25886 /* SetupProfileViewController.swift in Sources */,
 				06C026EE25BB502600372FDA /* ChatRequestViewController.swift in Sources */,
+				06E20C9E25C304D30034A32E /* ListenerService.swift in Sources */,
 				061C3EBC2500E6D100A922A6 /* Label + Extension.swift in Sources */,
 				06976689251218B2004BA591 /* ButtonFormView.swift in Sources */,
 				0619EDF425A8A2CE00F55A13 /* AddPhotoView.swift in Sources */,
