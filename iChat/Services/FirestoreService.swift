@@ -76,14 +76,25 @@ class FirestoreService {
     } // saveProfileWith()
     
     func createWaitingChat(message: String, receiver: MUser, completion: @escaping (Result<Void, Error>) -> Void) {
-        let reference = db.collection(["users", receiver.id, "waitingChat"].joined(separator: "/"))
+        let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
         let messageRef = reference.document(self.currentUser.id).collection("messages")
         
+        let message = MMessage(user: currentUser, content: message)
         let chat = MChat(friendUserName: currentUser.userName,
                          friendAvatarStringURL: currentUser.avatarStringURL,
-                         lastMessageContent: <#T##String#>,
-                         friendId: currentUser.id)
+                         lastMessageContent: message.content, friendId: currentUser.id)
         
-        reference.document(currentUser.id).setData(<#T##documentData: [String : Any]##[String : Any]#>, completion: <#T##((Error?) -> Void)?##((Error?) -> Void)?##(Error?) -> Void#>)
-    }
-}
+        reference.document(currentUser.id).setData(chat.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            messageRef.addDocument(data: message.representation) { (error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(Void()))
+            }
+        }
+    }}

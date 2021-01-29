@@ -35,6 +35,7 @@
 		0697668B2512543A004BA591 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697668A2512543A004BA591 /* StackView + Extension.swift */; };
 		06999CDD25BC485C00FB96CE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06999CDC25BC485C00FB96CE /* AuthService.swift */; };
 		06999CDE25BC485C00FB96CE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06999CDC25BC485C00FB96CE /* AuthService.swift */; };
+		06A7669025C4423200F285BB /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7668F25C4423200F285BB /* MMessage.swift */; };
 		06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */; };
 		06BE1F0225BC2BF40077DF95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */; };
 		06C026EE25BB502600372FDA /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C026ED25BB502600372FDA /* ChatRequestViewController.swift */; };
@@ -101,6 +102,7 @@
 		06976688251218B2004BA591 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
 		0697668A2512543A004BA591 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		06999CDC25BC485C00FB96CE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		06A7668F25C4423200F285BB /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		06A80DE225A6FEC0001E1A41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		06BE1F0125BC2BF40077DF95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06C026ED25BB502600372FDA /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				0665C96F25B4271F001FEAED /* MUser.swift */,
 				0665C97325B4272E001FEAED /* MChat.swift */,
+				06A7668F25C4423200F285BB /* MMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				065D074825C2B839000E21F4 /* UIImage + Extension.swift in Sources */,
 				06036A8B25AF710600105682 /* ActiveChatsCell.swift in Sources */,
 				06E6851924FFF442004FD855 /* UIButton + Extension.swift in Sources */,
+				06A7669025C4423200F285BB /* MMessage.swift in Sources */,
 				06C2487E25B1868300DD6CBF /* WaitingChatsCell.swift in Sources */,
 				06999CDD25BC485C00FB96CE /* AuthService.swift in Sources */,
 				06A80DE325A6FEC0001E1A41 /* LoginViewController.swift in Sources */,
