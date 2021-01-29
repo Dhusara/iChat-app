@@ -71,4 +71,8 @@ class FirestoreService {
             }
         } // StorageService
     } // saveProfileWith()
+    
+    func createWaitingChat(message: String, receiver: MUser, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+    }
 }
