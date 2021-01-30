@@ -61,6 +61,10 @@ class ListViewController: UIViewController {
             switch result {
             
             case .success(let chats):
+                if self.waitingChats != [], self.waitingChats.count <= chats.count {
+                    let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    self.present(chatRequestVC, animated: true, completion: nil)
+                }
                 self.waitingChats = chats
                 self.reloadData()
             case .failure(let error):
