@@ -18,6 +18,8 @@ class ChatRequestViewController: UIViewController {
     let acceptButton = UIButton(title: "ACCEPT", titleColor: .white, backgroundColor: .black, font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
     let denyButton = UIButton(title: "DENY", titleColor: #colorLiteral(red: 0.8352941176, green: 0.2, blue: 0.2, alpha: 1), backgroundColor: .mainWhite(), font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
     
+    var delegate: WaitingChatsNavigation?
+    
     private var chat: MChat
     
     init(chat: MChat) {
@@ -37,6 +39,21 @@ class ChatRequestViewController: UIViewController {
         view.backgroundColor = .mainWhite()
         customizeElements()
         setupConstraints()
+        
+        denyButton.addTarget(self, action: #selector(denyButtonTapped), for: .touchUpInside)
+        acceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func denyButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.removeWaitingChat(chat: self.chat)
+        }
+    }
+    
+    @objc private func acceptButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.changeToActive(chat: self.chat)
+        }
     }
     
     private func customizeElements() {

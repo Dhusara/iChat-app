@@ -63,6 +63,7 @@ class ListViewController: UIViewController {
             case .success(let chats):
                 if self.waitingChats != [], self.waitingChats.count <= chats.count {
                     let chatRequestVC = ChatRequestViewController(chat: chats.last!)
+                    chatRequestVC.delegate = self
                     self.present(chatRequestVC, animated: true, completion: nil)
                 }
                 self.waitingChats = chats
@@ -94,6 +95,8 @@ class ListViewController: UIViewController {
         
         collectionView.register(ActiveChatsCell.self, forCellWithReuseIdentifier: ActiveChatsCell.reuseId)
         collectionView.register(WaitingChatsCell.self, forCellWithReuseIdentifier: WaitingChatsCell.reuseId)
+        
+        collectionView.delegate = self
     }
     
     private func reloadData() {
@@ -207,6 +210,46 @@ extension ListViewController {
         
         return sectionHeader
     }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension ListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else {return}
+        guard let section = Section(rawValue: indexPath.section) else {return}
+        
+        switch section {
+        case .waitingChats:
+            let chatRequestVC = ChatRequestViewController(chat: chat)
+            chatRequestVC.delegate = self
+            self.present(chatRequestVC, animated: true, completion: nil)
+        case .activeChats:
+            print(#function)
+        }
+    }
+}
+
+// MARK: - WaitingChatsNavigation
+
+extension ListViewController: WaitingChatsNavigation {
+    
+    func removeWaitingChat(chat: MChat) {
+        FirestoreService.shared.deleteWaitingChat(chat: chat) { (result) in
+            switch result {
+            
+            case .success():
+                self.showAlert(with: "Successful!", and: "Chat with \(chat.friendUserName) was deleted.")
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    func changeToActive(chat: MChat) {
+        print(#function)
+    }
+
 }
 
 // MARK: - UISearchBarDelegate
