@@ -8,7 +8,6 @@
 
 import Firebase
 import FirebaseFirestore
-import FirebaseAuth
 
 class FirestoreService {
     
@@ -46,9 +45,9 @@ class FirestoreService {
         }
     }
     
-    func saveProfileWith(id: String, email: String, userName: String?, avatarImage: UIImage?, description: String?, sex: String?, completion: @escaping (Result<MUser, Error>) -> Void) {
+    func saveProfileWith(id: String, email: String, username: String?, avatarImage: UIImage?, description: String?, sex: String?, completion: @escaping (Result<MUser, Error>) -> Void) {
         
-        guard Validators.isFilled(userName: userName, description: description, sex: sex) else {
+        guard Validators.isFilled(username: username, description: description, sex: sex) else {
             completion(.failure(UserError.notFilled))
             return
         }
@@ -58,39 +57,38 @@ class FirestoreService {
             return
         }
         
-        var Muser = MUser(userName: userName!,
+        var muser = MUser(username: username!,
                           email: email,
                           avatarStringURL: "not exist",
                           description: description!,
                           sex: sex!,
                           id: id)
-        
-        StorageService.shared.uploadImage(photo: avatarImage!) { (result) in
+        StorageService.shared.upload(photo: avatarImage!) { (result) in
             switch result {
-            
+                
             case .success(let url):
-                Muser.avatarStringURL = url.absoluteString
-                self.usersRef.document(Muser.id).setData(Muser.representation) { (error) in
+                muser.avatarStringURL = url.absoluteString
+                self.usersRef.document(muser.id).setData(muser.representation) { (error) in
                     if let error = error {
                         completion(.failure(error))
                     } else {
-                        completion(.success(Muser))
+                        completion(.success(muser))
                     }
                 }
             case .failure(let error):
                 completion(.failure(error))
             }
         } // StorageService
-    } // saveProfileWith()
+    } // saveProfileWith
     
     func createWaitingChat(message: String, receiver: MUser, completion: @escaping (Result<Void, Error>) -> Void) {
         let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
         let messageRef = reference.document(self.currentUser.id).collection("messages")
         
         let message = MMessage(user: currentUser, content: message)
-        let chat = MChat(friendUserName: currentUser.userName,
+        let chat = MChat(friendUsername: currentUser.username,
                          friendAvatarStringURL: currentUser.avatarStringURL,
-                         lastMessageContent: message.content, friendId: currentUser.id)
+                         friendId: currentUser.id, lastMessageContent: message.content)
         
         reference.document(currentUser.id).setData(chat.representation) { (error) in
             if let error = error {
@@ -142,34 +140,31 @@ class FirestoreService {
     }
     
     func getWaitingChatMessages(chat: MChat, completion: @escaping (Result<[MMessage], Error>) -> Void) {
-            let reference = waitingChatsRef.document(chat.friendId).collection("messages")
-            var messages = [MMessage]()
-            reference.getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    completion(.failure(error))
-                    return
-                }
-                for document in querySnapshot!.documents {
-                    guard let message = MMessage(document: document) else {return}
-                    messages.append(message)
-                }
-                completion(.success(messages))
+        let reference = waitingChatsRef.document(chat.friendId).collection("messages")
+        var messages = [MMessage]()
+        reference.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
             }
+            for document in querySnapshot!.documents {
+                guard let message = MMessage(document: document) else { return }
+                messages.append(message)
+            }
+            completion(.success(messages))
+        }
     }
     
     func changeToActive(chat: MChat, completion: @escaping (Result<Void, Error>) -> Void) {
         getWaitingChatMessages(chat: chat) { (result) in
             switch result {
-            
             case .success(let messages):
                 self.deleteWaitingChat(chat: chat) { (result) in
                     switch result {
-                    
-                    case .success():
+                    case .success:
                         self.createActiveChat(chat: chat, messages: messages) { (result) in
                             switch result {
-                            
-                            case .success(_):
+                            case .success:
                                 completion(.success(Void()))
                             case .failure(let error):
                                 completion(.failure(error))
@@ -192,9 +187,38 @@ class FirestoreService {
                 completion(.failure(error))
                 return
             }
-            
             for message in messages {
                 messageRef.addDocument(data: message.representation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+                    completion(.success(Void()))
+                }
+            }
+        }
+    }
+    
+    func sendMessage(chat: MChat, message: MMessage, completion: @escaping (Result<Void, Error>) -> Void) {
+        let friendRef = usersRef.document(chat.friendId).collection("activeChats").document(currentUser.id)
+        let friendMessageRef = friendRef.collection("messages")
+        let myMessageRef = usersRef.document(currentUser.id).collection("activeChats").document(chat.friendId).collection("messages")
+        
+        let chatForFriend = MChat(friendUsername: currentUser.username,
+                                  friendAvatarStringURL: currentUser.avatarStringURL,
+                                  friendId: currentUser.id,
+                                  lastMessageContent: message.content)
+        friendRef.setData(chatForFriend.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            friendMessageRef.addDocument(data: message.representation) { (error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                myMessageRef.addDocument(data: message.representation) { (error) in
                     if let error = error {
                         completion(.failure(error))
                         return

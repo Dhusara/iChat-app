@@ -9,7 +9,8 @@
 import UIKit
 import SDWebImage
 
-class ActiveChatsCell: UICollectionViewCell, SelfConfiguringCell {
+class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
+    
     static var reuseId: String = "ActiveChatCell"
     
     
@@ -29,7 +30,7 @@ class ActiveChatsCell: UICollectionViewCell, SelfConfiguringCell {
     
     func configure<U>(with value: U) where U : Hashable {
         guard let chat: MChat = value as? MChat else { return }
-        friendName.text = chat.friendUserName
+        friendName.text = chat.friendUsername
         lastMessage.text = chat.lastMessageContent
         friendImageView.sd_setImage(with: URL(string: chat.friendAvatarStringURL), completed: nil)
     }
@@ -40,7 +41,7 @@ class ActiveChatsCell: UICollectionViewCell, SelfConfiguringCell {
 }
 
 // MARK: - Setup constraints
-extension ActiveChatsCell {
+extension ActiveChatCell {
     private func setupConstraints() {
         friendImageView.translatesAutoresizingMaskIntoConstraints = false
         friendName.translatesAutoresizingMaskIntoConstraints = false
@@ -105,4 +106,3 @@ struct ActiveChatProvider: PreviewProvider {
         }
     }
 }
-

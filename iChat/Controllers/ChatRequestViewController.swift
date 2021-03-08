@@ -7,24 +7,23 @@
 //
 
 import UIKit
-import SDWebImage
 
 class ChatRequestViewController: UIViewController {
     
     let containerView = UIView()
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "human6"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Mia Gonsalez", font: .systemFont(ofSize: 20, weight: .light))
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "human2"), contentMode: .scaleAspectFill)
+    let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     let aboutMeLabel = UILabel(text: "You have the opportunity to start a new chat", font: .systemFont(ofSize: 16, weight: .light))
     let acceptButton = UIButton(title: "ACCEPT", titleColor: .white, backgroundColor: .black, font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
-    let denyButton = UIButton(title: "DENY", titleColor: #colorLiteral(red: 0.8352941176, green: 0.2, blue: 0.2, alpha: 1), backgroundColor: .mainWhite(), font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
+    let denyButton = UIButton(title: "Deny", titleColor: #colorLiteral(red: 0.8352941176, green: 0.2, blue: 0.2, alpha: 1), backgroundColor: .mainWhite(), font: .laoSangamMN20(), isShadow: false, cornerRadius: 10)
     
-    var delegate: WaitingChatsNavigation?
+    weak var delegate: WaitingChatsNavigation?
     
     private var chat: MChat
     
     init(chat: MChat) {
         self.chat = chat
-        nameLabel.text = chat.friendUserName
+        nameLabel.text = chat.friendUsername
         imageView.sd_setImage(with: URL(string: chat.friendAvatarStringURL), completed: nil)
         super.init(nibName: nil, bundle: nil)
     }
@@ -65,16 +64,15 @@ class ChatRequestViewController: UIViewController {
         denyButton.layer.borderColor = #colorLiteral(red: 0.8352941176, green: 0.2, blue: 0.2, alpha: 1)
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 30
+        
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
         self.acceptButton.applyGradients(cornerRadius: 10)
     }
+    
 }
-
-// MARK: - Setup Constraints
 
 extension ChatRequestViewController {
     private func setupConstraints() {
@@ -115,10 +113,12 @@ extension ChatRequestViewController {
         ])
         
         NSLayoutConstraint.activate([
-            buttonsStackView.topAnchor.constraint(equalTo: aboutMeLabel.bottomAnchor, constant: 30),
+            buttonsStackView.topAnchor.constraint(equalTo: aboutMeLabel.bottomAnchor, constant: 24),
             buttonsStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
             buttonsStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             buttonsStackView.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
 }
+
+

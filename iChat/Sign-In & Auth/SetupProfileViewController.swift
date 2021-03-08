@@ -12,18 +12,17 @@ import SDWebImage
 
 class SetupProfileViewController: UIViewController {
     
-    let welcomeLabel = UILabel(text: "Set up Profile", font: .avenir26())
-    
-    let fullNameLabel = UILabel(text: "Full Name")
-    let aboutMeLabel = UILabel(text: "About Me")
-    let sexLabel = UILabel(text: "Sex")
+    let welcomeLabel = UILabel(text: "Set up profile!", font: .avenir26())
     
     let fullImageView = AddPhotoView()
     
+    let fullNameLabel = UILabel(text: "Full name")
+    let aboutmeLabel = UILabel(text: "About me")
+    let sexLabel = UILabel(text: "Sex")
+    
     let fullNameTextField = OneLineTextField(font: .avenir20())
     let aboutMeTextField = OneLineTextField(font: .avenir20())
-    
-    let sexSegmentedControl = UISegmentedControl(first: "Male", second: "Female")
+    let sexSegmentedControl = UISegmentedControl(first: "Male", second: "Femail")
     
     let goToChatsButton = UIButton(title: "Go to chats!", titleColor: .white, backgroundColor: .buttonDark(), cornerRadius: 4)
     
@@ -33,10 +32,9 @@ class SetupProfileViewController: UIViewController {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
         
-        if let userName = currentUser.displayName {
-            fullNameTextField.text = userName
+        if let username = currentUser.displayName {
+            fullNameTextField.text = username
         }
-        
         if let photoURL = currentUser.photoURL {
             fullImageView.circleImageView.sd_setImage(with: photoURL, completed: nil)
         }
@@ -48,13 +46,16 @@ class SetupProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         view.backgroundColor = .white
         setupConstraints()
         goToChatsButton.addTarget(self, action: #selector(goToChatsButtonTapped), for: .touchUpInside)
         fullImageView.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
     }
-    
+}
+
+// MARK: - Actions
+extension SetupProfileViewController {
     @objc private func plusButtonTapped() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -66,7 +67,7 @@ class SetupProfileViewController: UIViewController {
         FirestoreService.shared.saveProfileWith(
             id: currentUser.uid,
             email: currentUser.email!,
-            userName: fullNameTextField.text,
+            username: fullNameTextField.text,
             avatarImage: fullImageView.circleImageView.image,
             description: aboutMeTextField.text,
             sex: sexSegmentedControl.titleForSegment(at: sexSegmentedControl.selectedSegmentIndex)) { (result) in
@@ -82,24 +83,28 @@ class SetupProfileViewController: UIViewController {
                 }
         }
     }
-    
 }
 
-// MARK: - Setup Constraints
-
+// MARK: - Setup constraints
 extension SetupProfileViewController {
     private func setupConstraints() {
-        
-        let fullNameStackView = UIStackView(arrangedSubviews: [fullNameLabel, fullNameTextField], axis: .vertical, spacing: 0)
-        let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel, aboutMeTextField], axis: .vertical, spacing: 0)
-        let sexStackView = UIStackView(arrangedSubviews: [sexLabel, sexSegmentedControl], axis: .vertical, spacing: 15)
+        let fullNameStackView = UIStackView(arrangedSubviews: [fullNameLabel, fullNameTextField],
+                                            axis: .vertical,
+                                            spacing: 0)
+        let aboutMeStackView = UIStackView(arrangedSubviews: [aboutmeLabel, aboutMeTextField],
+        axis: .vertical,
+        spacing: 0)
+        let sexStackView = UIStackView(arrangedSubviews: [sexLabel, sexSegmentedControl],
+        axis: .vertical,
+        spacing: 12)
         
         goToChatsButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        let stackView = UIStackView(arrangedSubviews:
-                                        [fullNameStackView, aboutMeStackView, sexStackView, goToChatsButton],
-                                    axis: .vertical,
-                                    spacing: 50)
+        let stackView = UIStackView(arrangedSubviews: [
+            fullNameStackView,
+            aboutMeStackView,
+            sexStackView,
+            goToChatsButton
+            ], axis: .vertical, spacing: 40)
         
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         fullImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +115,7 @@ extension SetupProfileViewController {
         view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
             welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
@@ -124,25 +129,20 @@ extension SetupProfileViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
-        
     }
 }
 
 // MARK: - UIImagePickerControllerDelegate
-
 extension SetupProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            return
-        }
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         fullImageView.circleImageView.image = image
     }
 }
 
 // MARK: - SwiftUI
-
 import SwiftUI
 
 struct SetupProfileVCProvider: PreviewProvider {
@@ -158,9 +158,8 @@ struct SetupProfileVCProvider: PreviewProvider {
             return setupProfileVC
         }
         
-        func updateUIViewController(_ uiViewController: SetupProfileVCProvider.ContainerView.UIViewControllerType, context:  UIViewControllerRepresentableContext<SetupProfileVCProvider.ContainerView>) {
+        func updateUIViewController(_ uiViewController: SetupProfileVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<SetupProfileVCProvider.ContainerView>) {
             
         }
     }
 }
-

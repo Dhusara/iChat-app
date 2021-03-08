@@ -14,6 +14,7 @@ extension UILabel {
         self.init()
         
         self.text = text
+        self.font = font
     }
-    
 }
+

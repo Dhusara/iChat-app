@@ -12,7 +12,7 @@ import SDWebImage
 class UserCell: UICollectionViewCell, SelfConfiguringCell {
     
     let userImageView = UIImageView()
-    let userName = UILabel(text: "Sergei", font: .laoSangamMN20())
+    let userName = UILabel(text: "Alexey", font: .laoSangamMN20())
     let containerView = UIView()
     
     
@@ -44,8 +44,8 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
     
     func configure<U>(with value: U) where U : Hashable {
         guard let user: MUser = value as? MUser else { return }
-        userName.text = user.userName
-        guard let url = URL(string: user.avatarStringURL) else {return}
+        userName.text = user.username
+        guard let url = URL(string: user.avatarStringURL) else { return }
         userImageView.sd_setImage(with: url, completed: nil)
     }
     
@@ -108,4 +108,3 @@ struct UserChatProvider: PreviewProvider {
         }
     }
 }
-

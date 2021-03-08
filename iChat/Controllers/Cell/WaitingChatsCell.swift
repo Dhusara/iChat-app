@@ -8,9 +8,7 @@
 
 import UIKit
 
-class WaitingChatsCell: UICollectionViewCell, SelfConfiguringCell {
-    
-    
+class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseId: String = "WaitingChatCell"
     
     let friendImageView = UIImageView()
@@ -67,4 +65,3 @@ struct WaitingChatProvider: PreviewProvider {
         }
     }
 }
-

@@ -12,16 +12,16 @@ import SDWebImage
 class ProfileViewController: UIViewController {
     
     let containerView = UIView()
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "human6"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Mia Gonsalez", font: .systemFont(ofSize: 20, weight: .light))
-    let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best girl in the World!", font: .systemFont(ofSize: 16, weight: .light))
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "human2"), contentMode: .scaleAspectFill)
+    let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
+    let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best man in the world!", font: .systemFont(ofSize: 16, weight: .light))
     let myTextField = InsertableTextField()
     
     private let user: MUser
     
     init(user: MUser) {
         self.user = user
-        self.nameLabel.text = user.userName
+        self.nameLabel.text = user.username
         self.aboutMeLabel.text = user.description
         self.imageView.sd_setImage(with: URL(string: user.avatarStringURL), completed: nil)
         super.init(nibName: nil, bundle: nil)
@@ -35,12 +35,11 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        
-        customizeElements()
+        constomizeElements()
         setupConstraints()
     }
     
-    private func customizeElements() {
+    private func constomizeElements() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -56,24 +55,22 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func sendMessage() {
-        guard let message = myTextField.text, message != "" else {return}
+        guard let message = myTextField.text, message != "" else { return }
         
         self.dismiss(animated: true) {
             FirestoreService.shared.createWaitingChat(message: message, receiver: self.user) { (result) in
                 switch result {
-                
-                case .success():
-                    UIApplication.getTopViewController()?.showAlert(with: "Successful!", and: "Your message to \(self.user.userName) has been sent!")
+                    
+                case .success:
+                    UIApplication.getTopViewController()?.showAlert(with: "Успешно!", and: "Ваше сообщение для \(self.user.username) было отправлено.")
                 case .failure(let error):
-                    UIApplication.getTopViewController()?.showAlert(with: "Error", and: error.localizedDescription)
+                    UIApplication.getTopViewController()?.showAlert(with: "Ошибка", and: error.localizedDescription)
                 }
             }
+            
         }
     }
-    
 }
-
-// MARK: - Setup Constraints
 
 extension ProfileViewController {
     
@@ -117,5 +114,5 @@ extension ProfileViewController {
             myTextField.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
-    
 }
+

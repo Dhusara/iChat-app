@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GoogleSignIn
+import  GoogleSignIn
 
 class AuthViewController: UIViewController {
     
@@ -15,7 +15,7 @@ class AuthViewController: UIViewController {
     
     let googleLabel = UILabel(text: "Get started with")
     let emailLabel = UILabel(text: "Or sign up with")
-    let alreadyOnboardLabel = UILabel(text: "Already onboard?")
+    let alreadyOnboardLabel = UILabel(text: "Alerady onboard?")
     
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
     let emailButton = UIButton(title: "Email", titleColor: .white, backgroundColor: .buttonDark())
@@ -23,13 +23,11 @@ class AuthViewController: UIViewController {
     
     let signUpVC = SignUpViewController()
     let loginVC = LoginViewController()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        googleButton.customizeGoogleButton()
         
+        googleButton.customizeGoogleButton()
         view.backgroundColor = .white
         setupConstraints()
         
@@ -42,31 +40,33 @@ class AuthViewController: UIViewController {
         
         GIDSignIn.sharedInstance()?.delegate = self
     }
-    
-    @objc private func emailButtonTapped() {
-        present(signUpVC, animated: true, completion: nil)
-    }
-    
-    @objc private func loginButtonTapped() {
-        present(loginVC, animated: true, completion: nil)
-    }
-    
-    @objc private func googleButtonTapped() {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
-    }
-
 }
-// MARK: - Setup Constraints
+
+// MARK: - Actions
+extension AuthViewController {
+    @objc private func emailButtonTapped() {
+           present(signUpVC, animated: true, completion: nil)
+       }
+       
+       @objc private func loginButtonTapped() {
+           present(loginVC, animated: true, completion: nil)
+       }
+       
+       @objc private func googleButtonTapped() {
+           GIDSignIn.sharedInstance()?.presentingViewController = self
+           GIDSignIn.sharedInstance().signIn()
+       }
+}
+
+// MARK: - Setup constraints
 extension AuthViewController {
     private func setupConstraints() {
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(logoImageView)
         let googleView = ButtonFormView(label: googleLabel, button: googleButton)
         let emailView = ButtonFormView(label: emailLabel, button: emailButton)
         let loginView = ButtonFormView(label: alreadyOnboardLabel, button: loginButton)
-        
+    
         let stackView = UIStackView(arrangedSubviews: [googleView, emailView, loginView], axis: .vertical, spacing: 40)
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(logoImageView)
@@ -74,20 +74,18 @@ extension AuthViewController {
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: logoImageView.topAnchor, constant: 160),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            stackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 160),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
-
     }
 }
 
-// MARK: - AuthViewController to AuthNavigationDelegate
-
+// MARK: - AuthNavigatingDelegate
 extension AuthViewController: AuthNavigationDelegate {
     func toLoginVC() {
         present(loginVC, animated: true, completion: nil)
@@ -99,37 +97,34 @@ extension AuthViewController: AuthNavigationDelegate {
 }
 
 // MARK: - GIDSignInDelegate
-
 extension AuthViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         AuthService.shared.googleLogin(user: user, error: error) { (result) in
             switch result {
-            
             case .success(let user):
                 FirestoreService.shared.getUserData(user: user) { (result) in
                     switch result {
-                    
                     case .success(let muser):
-                        UIApplication.getTopViewController()?.showAlert(with: "Successful!", and: "You are registered!") {
+                        UIApplication.getTopViewController()?.showAlert(with: "Успешно", and: "Вы авторизованы") {
                             let mainTabBar = MainTabBarController(currentUser: muser)
                             mainTabBar.modalPresentationStyle = .fullScreen
                             UIApplication.getTopViewController()?.present(mainTabBar, animated: true, completion: nil)
                         }
-                    case .failure(let _):
-                        UIApplication.getTopViewController()?.showAlert(with: "Successful!", and: "You are entered!") {
+                    case .failure(_):
+                        UIApplication.getTopViewController()?.showAlert(with: "Успешно", and: "Вы зарегистрированны") {
                             UIApplication.getTopViewController()?.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                         }
-                    }
+                    } // result
                 }
             case .failure(let error):
-                self.showAlert(with: "Error", and: error.localizedDescription)
+                self.showAlert(with: "Ошибка", and: error.localizedDescription)
             }
         }
     }
 }
 
-// MARK: - SwiftUI
 
+// MARK: - SwiftUI
 import SwiftUI
 
 struct AuthVCProvider: PreviewProvider {
@@ -145,8 +140,9 @@ struct AuthVCProvider: PreviewProvider {
             return viewController
         }
         
-        func updateUIViewController(_ uiViewController: AuthVCProvider.ContainerView.UIViewControllerType, context:  UIViewControllerRepresentableContext<AuthVCProvider.ContainerView>) {
+        func updateUIViewController(_ uiViewController: AuthVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<AuthVCProvider.ContainerView>) {
             
         }
     }
 }
+

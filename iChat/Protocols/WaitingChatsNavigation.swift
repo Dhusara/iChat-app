@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol WaitingChatsNavigation {
+protocol WaitingChatsNavigation: class {
     func removeWaitingChat(chat: MChat)
     func changeToActive(chat: MChat)
 }

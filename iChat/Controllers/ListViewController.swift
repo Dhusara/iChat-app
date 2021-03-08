@@ -22,22 +22,24 @@ class ListViewController: UIViewController {
         
         func description() -> String {
             switch self {
-            
             case .waitingChats:
-                return "Waiting Chats"
+                return "Waiting chats"
             case .activeChats:
-                return "Active Chats"
+                return "Active chats"
             }
         }
     }
     
-    private let currentUser: MUser
+    var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
+    var collectionView: UICollectionView!
     
-    init(currentUser: MUser) {
-        self.currentUser = currentUser
-        super.init(nibName: nil, bundle: nil)
-        title = currentUser.userName
-    }
+    private let currentUser: MUser
+       
+       init(currentUser: MUser) {
+           self.currentUser = currentUser
+           super.init(nibName: nil, bundle: nil)
+           title = currentUser.username
+       }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,9 +49,6 @@ class ListViewController: UIViewController {
         waitingChatsListener?.remove()
         activeChatsListener?.remove()
     }
-    
-    var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
-    var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +60,6 @@ class ListViewController: UIViewController {
         
         waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: waitingChats, completion: { (result) in
             switch result {
-            
             case .success(let chats):
                 if self.waitingChats != [], self.waitingChats.count <= chats.count {
                     let chatRequestVC = ChatRequestViewController(chat: chats.last!)
@@ -71,18 +69,17 @@ class ListViewController: UIViewController {
                 self.waitingChats = chats
                 self.reloadData()
             case .failure(let error):
-                self.showAlert(with: "Error", and: error.localizedDescription)
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }
         })
         
         activeChatsListener = ListenerService.shared.activeChatsObserve(chats: activeChats, completion: { (result) in
             switch result {
-            
             case .success(let chats):
                 self.activeChats = chats
                 self.reloadData()
             case .failure(let error):
-                self.showAlert(with: "Error", and: error.localizedDescription)
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }
         })
     }
@@ -106,8 +103,8 @@ class ListViewController: UIViewController {
         
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
-        collectionView.register(ActiveChatsCell.self, forCellWithReuseIdentifier: ActiveChatsCell.reuseId)
-        collectionView.register(WaitingChatsCell.self, forCellWithReuseIdentifier: WaitingChatsCell.reuseId)
+        collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
         
         collectionView.delegate = self
     }
@@ -135,9 +132,9 @@ extension ListViewController {
             
             switch section {
             case .activeChats:
-                return self.configure(collectionView: collectionView,cellType: ActiveChatsCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChats:
-                return self.configure(collectionView: collectionView, cellType: WaitingChatsCell.self, with: chat, for: indexPath)
+                 return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
         
@@ -197,7 +194,6 @@ extension ListViewController {
     }
     
     private func createActiveChats() -> NSCollectionLayoutSection {
-        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                               heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -216,7 +212,8 @@ extension ListViewController {
     }
     
     private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .estimated(1))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
                                                                         elementKind: UICollectionView.elementKindSectionHeader,
                                                                         alignment: .top)
@@ -226,11 +223,11 @@ extension ListViewController {
 }
 
 // MARK: - UICollectionViewDelegate
-
 extension ListViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else {return}
-        guard let section = Section(rawValue: indexPath.section) else {return}
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
         
         switch section {
         case .waitingChats:
@@ -245,17 +242,14 @@ extension ListViewController: UICollectionViewDelegate {
 }
 
 // MARK: - WaitingChatsNavigation
-
 extension ListViewController: WaitingChatsNavigation {
-    
     func removeWaitingChat(chat: MChat) {
         FirestoreService.shared.deleteWaitingChat(chat: chat) { (result) in
             switch result {
-            
-            case .success():
-                self.showAlert(with: "Successful!", and: "Chat with \(chat.friendUserName) was deleted.")
+            case .success:
+                self.showAlert(with: "Успешно!", and: "Чат с \(chat.friendUsername) был удален")
             case .failure(let error):
-                self.showAlert(with: "Error", and: error.localizedDescription)
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }
         }
     }
@@ -263,19 +257,16 @@ extension ListViewController: WaitingChatsNavigation {
     func changeToActive(chat: MChat) {
         FirestoreService.shared.changeToActive(chat: chat) { (result) in
             switch result {
-            
-            case .success():
-                self.showAlert(with: "Successful!", and: "Have a fun with \(chat.friendUserName)!")
+            case .success:
+                self.showAlert(with: "Успешно!", and: "Приятного общения с \(chat.friendUsername).")
             case .failure(let error):
-                self.showAlert(with: "Error", and: error.localizedDescription)
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }
         }
     }
-
 }
 
 // MARK: - UISearchBarDelegate
-
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
@@ -287,10 +278,7 @@ import SwiftUI
 
 struct ListVCProvider: PreviewProvider {
     static var previews: some View {
-        Group {
-            ContainerView().edgesIgnoringSafeArea(.all)
-            ContainerView().edgesIgnoringSafeArea(.all)
-        }
+        ContainerView().edgesIgnoringSafeArea(.all)
     }
     
     struct ContainerView: UIViewControllerRepresentable {
@@ -306,3 +294,4 @@ struct ListVCProvider: PreviewProvider {
         }
     }
 }
+

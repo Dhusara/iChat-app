@@ -16,5 +16,4 @@ extension UISegmentedControl {
         self.insertSegment(withTitle: second, at: 1, animated: true)
         self.selectedSegmentIndex = 0
     }
-    
 }
